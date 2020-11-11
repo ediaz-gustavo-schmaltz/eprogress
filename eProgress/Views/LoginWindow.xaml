@@ -1,0 +1,109 @@
+﻿<Window x:Class="eProgress.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eProgress.View"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="eProcess" 
+        Height="600"
+        Width="800" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize">
+
+    <Grid>
+
+        <Rectangle Height="300" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFEB3B"/>
+                    <GradientStop Color="#FFF3DC0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="480"
+                   Height="340" 
+                   VerticalAlignment="Bottom"
+                   Margin="0,80" 
+                   RadiusY="10" 
+                   RadiusX="10" 
+                   Fill="White">
+
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15"
+                                  Direction="0"
+                                  RenderingBias="Quality"
+                                  ShadowDepth="1"
+                                  Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Grid VerticalAlignment="Bottom" 
+              Margin="160,80"
+              Height="340">
+
+            <Label Content="LOGIN"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="25" 
+                   Foreground="Gray"
+                   FontSize="18"/>
+
+            <StackPanel VerticalAlignment="Center" 
+                        Margin="15">
+
+                <TextBox Margin="0,10"
+                         materialDesign:HintAssist.Hint="E-MAIL"
+                         Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
+                         FontFamily="Champagne &amp; Limousines"
+                         FontSize="16"/>
+
+                <PasswordBox Margin="0,10"
+                             materialDesign:HintAssist.Hint="SENHA" 
+                             Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}"
+                             FontFamily="Champagne &amp; Limousines"
+                             FontSize="16"/>
+
+                <CheckBox x:Name="ckbLembrar" 
+                          Content="Lembre-me"
+                          FontFamily="Champagne &amp; Limousines"
+                          Margin="0,10"
+                          Opacity="0.9"
+                          Style="{StaticResource MaterialDesignAccentCheckBox}"/>
+            </StackPanel>
+        </Grid>
+        <Button Width="250" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,65"
+                Content="LOGIN"
+                Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                BorderBrush="{StaticResource MaterialDesignDarkSeparatorBackground}"
+                Command="{Binding MessageBoxCommand}"/>
+
+        <TextBlock Text="ESQUECEU A SENHA?"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="30"
+                   Foreground="Gray" 
+                   Cursor="Hand"/>
+
+        <Ellipse VerticalAlignment="Top"
+                 HorizontalAlignment="Right"
+                 Width="100"
+                 Height="100" 
+                 Margin="175,25"
+                 Fill="White">
+
+        </Ellipse>
+    </Grid>
+</Window>
